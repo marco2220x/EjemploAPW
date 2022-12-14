@@ -1,0 +1,122 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+#wrapper {
+    margin: 0px;
+    top: 100px;
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+/* BEGIN: */
+.menu, .sub-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+.menu li {
+    background-color: #F2F2F2;
+    cursor: pointer;
+    position: relative;
+    transition: background-color .5s;
+    -moz-transition: background-color .5s;
+    -o-transition: background-color .5s;
+    -webkit-transition: background-color .5s;  /* IE lt 10, Chrome lt 1, Opera lt 11.6, Safari lt 3, FF lt 4, Android lt 2.1  iOS lt 2.0  transition. */
+}
+.menu li:hover {
+    background-color: #014DA1 !important; /* .menu > li.home. */
+}
+.menu a {
+    color: #414747;
+    display: block;
+
+    font-size: 13px;
+    font-weight: bold;
+    height: 100%;
+    margin: 0 5px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    word-wrap: break-word;
+    letter-spacing:1px;
+}
+.menu a:hover {
+    /* a:hover. */
+    color: #FFF;
+}
+/* END:  */
+
+/* BEGIN:  */
+.menu {
+  
+    height: 50px;
+}
+.menu > li {
+    float: left;
+    height: 100%;
+    width: 15%; 
+    width: calc((100% - 90px) / 7);
+    width: -moz-calc((100% - 90px) / 7);
+    width: -webkit-calc((100% - 90px) / 7);/* IE lt 9, Chrome lt 19, Opera lt 15, Safari lt 6, FF lt 4, Android и iOS не поддерэивают calc. */
+}
+.menu > li.home {
+    background: #014DA1 url(../img/home.png) center no-repeat;
+    width: 90px;
+}
+.menu > li.current {
+    background-color: #014DA1 !important; /* !important VS .menu li:hover */
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;  /* IE lt 9, Chrome lt 1, Opera lt 10.5, Safari lt 3, FF lt 3.5, Android lt 2.1 и iOS lt 2.0 не поддерэивают box-shadow. */
+}
+.menu > li:not(:first-child) {
+    box-shadow: inset 1px 0px 0px 0px #dbdbdb, inset 2px 0 0 0 #dbdbdb;
+    -moz-box-shadow: inset 1px 0px 0px 0px #dbdbdb, inset 2px 0 0 0 #dbdbdb;
+    -webkit-box-shadow: inset 1px 0 0 0 #dbdbdb, inset 2px 0 0 0 #dbdbdb;
+}
+.menu > li.home > a {
+    color: transparent !important;
+}
+.menu > li > a > span {
+    left: 0; 
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);/* IE lt 9, Chrome lt 5, Opera lt 10.5, Safari lt 3.1, FF lt 3.5, Android lt 2.1  transform. */
+}
+/* END: */
+
+/* BEGIN:  */
+.sub-menu {
+    max-height: 0;
+    min-width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    transition: max-height .5s .2s;
+    -moz-transition: max-height .5s .2s;
+    -o-transition: max-height .5s .2s;
+    -webkit-transition: max-height .5s .2s;
+}
+li:hover > .sub-menu {
+    max-height: 600px;
+}
+.sub-menu li {
+    height: 50px;
+}
+.sub-menu a {
+    line-height: 50px;
+    transition: color .5s;
+    -moz-transition: color .5s;
+    -o-transition: color .5s;
+    -webkit-transition: color .5s;
+    white-space: nowrap;
+}
+.sub-menu li.current a, .sub-menu a:hover {
+    color: #FFF !important; /* !important VS .menu a:hover */
+}
+/* END:  */
